@@ -7,12 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.agilerules.iotled.model.LedModel;
 
 /**
- * A DAO for the entity User is simply created by extending the CrudRepository
- * interface provided by spring. The following methods are some of the ones
- * available from such interface: save, delete, deleteAll, findOne and findAll.
- * The magic is that such methods must not be implemented, and moreover it is
- * possible create new query methods working only by defining their signature!
- * 
+ * A DAO for the entity LedModel which extends Spring's JPARepository interface 
+ * and the findTop10ByOrderByIdDesc will fetch the top 10 records from the table
+ * led_details order by the primary key field Id in descending order.
  */
 @Transactional
 public interface LedDAORepository extends JpaRepository<LedModel, Long>{
