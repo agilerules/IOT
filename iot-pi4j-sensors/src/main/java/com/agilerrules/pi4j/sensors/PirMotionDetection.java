@@ -46,7 +46,6 @@ public class PirMotionDetection {
 			}
 		});
 	
-	
 		try {           
 		    // keep program running until user aborts 
 		    for (;;) {      
