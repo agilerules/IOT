@@ -27,9 +27,7 @@ public class BarCodeDecoder {
 	
 	InputStream barCodeInputStream;
 	try {
-		//barCodeInputStream = new FileInputStream("C:/QR/IMG_5640.JPG");
-		barCodeInputStream = new FileInputStream("C:/QR/Images/snap_20160731144145.png");
-		//barCodeInputStream = new FileInputStream("C:/QR/CODE_128.png");
+		barCodeInputStream = new FileInputStream("C:/QR/CODE_128.png");
 		//barCodeInputStream = new FileInputStream("C:/QR/PDF_147.png");
 		BufferedImage barCodeBufferedImage = ImageIO.read(barCodeInputStream);
 

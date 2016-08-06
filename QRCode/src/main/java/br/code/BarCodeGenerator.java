@@ -18,7 +18,7 @@ import com.google.zxing.pdf417.PDF417Writer;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
  
 /**
- * This Java class will generate the QR code in .png format pointing to sample URL
+ * This Java class will generate the Bar code in .png format pointing to sample URL
  */
  
 public class BarCodeGenerator {
@@ -33,28 +33,23 @@ public class BarCodeGenerator {
 			
 		Map<EncodeHintType, Object> hintMap = new EnumMap<EncodeHintType, Object>(EncodeHintType.class);
 		hintMap.put(EncodeHintType.CHARACTER_SET, "UTF-8");
-		
-		// Now with zxing version 3.2.1 you could change border size (white border size to just 1)
 		hintMap.put(EncodeHintType.MARGIN, 1); /* default = 4 */
 		hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
  
 		BitMatrix bitMatrix;
 		Writer writer;
 		try {
-			//  Write Barcode
-			//String codeText = "http://agilerule.blogspot.in";
-			String codeText = "Mythri";
-			String fileLocation = "C:/QR/CODE_128_Mythri.png";
+			// Write Barcode in CODE_128 format
+			String codeText = "http://agilerule.blogspot.in";
+			String fileLocation = "C:/QR/CODE_128.png";
 			writer = new Code128Writer();
-			//bitMatrix = qrCodeWriter.encode(codeText, BarcodeFormat.CODE_128, width, height, hintMap);
 			bitMatrix = writer.encode(codeText, BarcodeFormat.CODE_128, width, height, hintMap);
 			MatrixToImageWriter.writeToStream(bitMatrix, fileType, new FileOutputStream(new File(fileLocation)));
 			System.out.println("\n\nYou have successfully created Barcode 128 Code with the image created at the location: "+fileLocation);
 			
-			// Write PDF417
-			//codeText = "http://agilerule.blogspot.in";
-			codeText = "Malini";
-			fileLocation = "C:/QR/PDF_147_Malini.png";
+			// Write Barcode in PDF_147 format
+			codeText = "http://agilerule.blogspot.in";
+			fileLocation = "C:/QR/PDF_147.png";
 			writer = new PDF417Writer();
             bitMatrix = writer.encode(codeText, BarcodeFormat.PDF_417, width, height);
             MatrixToImageWriter.writeToStream(bitMatrix, fileType, new FileOutputStream(new File(fileLocation)));
