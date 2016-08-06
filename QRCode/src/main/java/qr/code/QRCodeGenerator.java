@@ -26,9 +26,8 @@ public class QRCodeGenerator {
 	// Tutorial: http://zxing.github.io/zxing/apidocs/index.html
  
 	public static void main(String[] args) {
-		//String codeText = "http://agilerule.blogspot.in";
-		String codeText = "Srikar";
-		String fileLocation = "C:/QR/QRGenerator_Srikar.png";
+		String codeText = "http://agilerule.blogspot.in";
+		String fileLocation = "C:/QR/QRGenerator.png";
 		int size = 250;
 		String fileType = "png";
 		File myFile = new File(fileLocation);

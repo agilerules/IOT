@@ -16,11 +16,7 @@ import com.google.zxing.common.HybridBinarizer;
 
 public class QRCodeDecoder {
        public static void main(String[] args) throws IOException {
-           //File imageFile = new File("C:/QR/QRGenerator.png");
-    	   //File imageFile = new File("C:/QR/IMG_5635.JPG");
-    	   //File imageFile = new File("C:/QR/snap_20160725231114.png");
-    	   File imageFile = new File("C:/QR/Images/snap_20160731144302.png");
-           
+    	   File imageFile = new File("C:/QR/Images/QRGenerator.png");
           try {
         	  	 BufferedImage image = ImageIO.read(imageFile);
                  LuminanceSource source = new BufferedImageLuminanceSource(image);
