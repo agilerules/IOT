@@ -22,15 +22,15 @@ public class TwilioMMS {
 
         // Build the parameters
         List<NameValuePair> params = new ArrayList<NameValuePair>();
-        params.add(new BasicNameValuePair("To", "+919962835564"));
-        params.add(new BasicNameValuePair("From", "+16262391805"));
+        params.add(new BasicNameValuePair("To", "<Mobile_No_for_which_you_want_to_send_SMS>"));
+        params.add(new BasicNameValuePair("From", "<Your_Twilio_Registered_Number>"));
         params.add(new BasicNameValuePair("Body", "This is test message and check the below URL:"));
         params.add(new BasicNameValuePair("MediaUrl", mediaURL));
         
         MessageFactory messageFactory = client.getAccount().getMessageFactory();
         Message message;
 		try {
-			System.out.println("About to send MMS using Twilio to the registered mobile number +919962835564..");
+			System.out.println("About to send MMS using Twilio to the mobile number ..");
 			message = messageFactory.create(params);
 			System.out.println("MMS is successfully send using Twilio and the SID of the message is: "+message.getSid());
 		} catch (TwilioRestException e) {
