@@ -19,7 +19,7 @@ public class RelayCircuitWithMains {
 	 * 
 	 */
 	public void controlRelayCircuit(){
-		System.out.println("Starting Relay Circuit With Mains Example with delay of 20 seconds..."); 
+		System.out.println("Starting Relay Circuit With Mains Example..."); 
 		
 		//This is required to enable Non Privileged Access to avoid applying sudo to run Pi4j programs
 		GpioUtil.enableNonPrivilegedAccess();
@@ -32,8 +32,7 @@ public class RelayCircuitWithMains {
 		GpioPinDigitalOutput relayLED1 = gpioRelayLED1.provisionDigitalOutputPin(RaspiPin.GPIO_01,"RelayLED1",PinState.HIGH); //OFF
 		relayLED1.low(); //ON
 		
-		introduceDelay(20000);
-		
+		introduceDelay(10000);
 		System.out.println("LED's on Relay IN1 will turn OFF..");
 		relayLED1.high(); //OFF
 	
